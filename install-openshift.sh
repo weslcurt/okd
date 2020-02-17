@@ -140,7 +140,11 @@ yum -y --enablerepo=epel install ansible.rpm
 cat <<EOD > /etc/hosts
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
-${IP}		$(hostname) console console.${DOMAIN}
+192.168.2.50    osn2
+192.168.2.40    osn1
+192.168.2.55    osn3
+192.168.2.60    osn4
+192.168.2.30    localhost.localdomain console console.wescurtis.com
 EOD
 
 if [ -z $DISK ]; then
@@ -182,8 +186,8 @@ if [ "$memory" -lt "16777216" ]; then
 	export LOGGING="False"
 fi
 
-curl -o inventory.download $SCRIPT_REPO/inventory.ini
-envsubst < inventory.download > inventory.ini
+# curl -o inventory.download $SCRIPT_REPO/inventory.ini
+# envsubst < inventory.download > inventory.ini
 
 # add proxy in inventory.ini if proxy variables are set
 if [ ! -z "${HTTPS_PROXY:-${https_proxy:-${HTTP_PROXY:-${http_proxy}}}}" ]; then
