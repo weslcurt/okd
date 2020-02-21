@@ -144,7 +144,7 @@ cat <<EOD > /etc/hosts
 192.168.2.40    osn1
 192.168.2.55    osn3
 192.168.2.60    osn4
-192.168.2.30    localhost.localdomain console console.wescurtis.com
+192.168.2.30    localhost.localdomain console console.toolbench.io
 EOD
 
 if [ -z $DISK ]; then
