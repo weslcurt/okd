@@ -140,9 +140,7 @@ yum -y --enablerepo=epel install ansible.rpm
 cat <<EOD > /etc/hosts
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
-#192.168.2.91    okdn1
-#192.168.2.92    okdn2
-#192.168.2.93    okdn3
+192.168.2.101    okdn1
 192.168.2.100    localhost.localdomain console console.toolbench.io
 EOD
 
